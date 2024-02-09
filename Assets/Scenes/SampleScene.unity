@@ -1570,7 +1570,6 @@ GameObject:
   - component: {fileID: 1144785713}
   - component: {fileID: 1144785712}
   - component: {fileID: 1144785711}
-  - component: {fileID: 1144785714}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1642,7 +1641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1144785714}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -1692,18 +1691,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144785709}
   m_CullTransparentMesh: 1
---- !u!114 &1144785714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144785709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5aebcb2d7d63748bb462a06cbe95a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1244502671
 GameObject:
   m_ObjectHideFlags: 0
