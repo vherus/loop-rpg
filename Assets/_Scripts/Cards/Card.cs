@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class Card : MonoBehaviour
+[CreateAssetMenu(fileName = "Card", menuName = "ScriptableObjects/Card")]
+public class Card : ScriptableObject
 {
-    public void OnClick()
-    {
-        Debug.Log("Card was clicked!");
-    }
+    public string prefabName;
 }

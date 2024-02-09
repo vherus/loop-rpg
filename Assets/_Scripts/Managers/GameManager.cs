@@ -43,6 +43,10 @@ public class GameManager : Singleton<GameManager>
                 HandleFighting();
                 break;
 
+            case GameState.PlacingCard:
+                HandlePlacingCard();
+                break;
+
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
@@ -74,6 +78,11 @@ public class GameManager : Singleton<GameManager>
         // TODO stop the player from moving between waypoints
         Debug.Log("Player is now fighting!");
     }
+
+    private void HandlePlacingCard()
+    {
+        Debug.Log("Player is placing a card");
+    }
 }
 
 [Serializable]
@@ -82,5 +91,6 @@ public enum GameState
     Null = 0,
     Starting = 1,
     Adventuring = 2,
-    Fighting = 3
+    Fighting = 3,
+    PlacingCard = 4
 }
