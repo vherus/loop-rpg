@@ -24,4 +24,12 @@ public class Tile : MonoBehaviour
             Debug.Log(gameObject.name + " has spawned a " + enemy.GetComponent<Enemy>().DisplayName + "!");
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (SpawnedEnemies.Count > 0) {
+            Debug.Log("Tile has enemies, initiate combat!");
+            GameManager.Instance.ChangeState(GameState.Fighting);
+        }
+    }
 }

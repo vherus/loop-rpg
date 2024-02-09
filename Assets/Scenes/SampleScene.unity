@@ -223,7 +223,8 @@ PrefabInstance:
       value: Tile_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7178869692490788718, guid: cd6aead9a486fec40b95a79edda2b490, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd6aead9a486fec40b95a79edda2b490, type: 3}
@@ -711,7 +712,8 @@ PrefabInstance:
       value: Tile_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7178869692490788718, guid: cd6aead9a486fec40b95a79edda2b490, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd6aead9a486fec40b95a79edda2b490, type: 3}
@@ -2459,10 +2461,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 861976211}
     m_Modifications:
+    - target: {fileID: 5927936444815556705, guid: 3f51cc1d9f67be4408dafeffe2c1cd54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7951661169991025162, guid: 3f51cc1d9f67be4408dafeffe2c1cd54,
         type: 3}
       propertyPath: m_Name
       value: HomeTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299411929087289513, guid: 3f51cc1d9f67be4408dafeffe2c1cd54,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299411929087289513, guid: 3f51cc1d9f67be4408dafeffe2c1cd54,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5405
+      objectReference: {fileID: 0}
+    - target: {fileID: 8299411929087289513, guid: 3f51cc1d9f67be4408dafeffe2c1cd54,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8299411929087289513, guid: 3f51cc1d9f67be4408dafeffe2c1cd54,
         type: 3}
@@ -2583,7 +2605,8 @@ PrefabInstance:
       value: Tile_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7178869692490788718, guid: cd6aead9a486fec40b95a79edda2b490, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd6aead9a486fec40b95a79edda2b490, type: 3}

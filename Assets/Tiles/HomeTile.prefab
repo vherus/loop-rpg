@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 4960409292024325690}
   - component: {fileID: 2874548791573131472}
   - component: {fileID: 2941988990740554160}
-  - component: {fileID: 2606683354502720619}
+  - component: {fileID: 3018760651745411117}
   m_Layer: 0
   m_Name: HomeTile
   m_TagString: Respawn
@@ -167,14 +167,14 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2606683354502720619
+--- !u!114 &3018760651745411117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
