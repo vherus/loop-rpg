@@ -10,6 +10,7 @@ public class GameManager : Singleton<GameManager>
 
     public GameObject SelectedTile = null;
 
+    [SerializeField]
     private GameObject player;
 
     void Start() {
@@ -62,25 +63,25 @@ public class GameManager : Singleton<GameManager>
 
         // Set up stuff, run cinematics, set up environment, whatever
 
-        player = GameObject.FindGameObjectWithTag("Player");
-
         ChangeState(GameState.Adventuring);
     }
 
     private void HandleAdventuring()
     {
         // TODO allow the player to move between waypoints
+        player.GetComponent<PlayerAI>().ResumeMovement();
         Debug.Log("Player is now adventuring!");
     }
 
     private void HandleFighting()
     {
-        // TODO stop the player from moving between waypoints
+        player.GetComponent<PlayerAI>().PauseMovement();
         Debug.Log("Player is now fighting!");
     }
 
     private void HandlePlacingCard()
     {
+        player.GetComponent<PlayerAI>().PauseMovement();
         Debug.Log("Player is placing a card");
     }
 }

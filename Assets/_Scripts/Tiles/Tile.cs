@@ -25,10 +25,17 @@ public class Tile : MonoBehaviour
         }
     }
 
+    private void AfterStateChange(GameState state)
+    {
+        Debug.Log($"After state change called with state {state}");
+        GameManager.OnAfterStateChanged -= AfterStateChange;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (SpawnedEnemies.Count > 0) {
             Debug.Log("Tile has enemies, initiate combat!");
+            GameManager.OnAfterStateChanged += AfterStateChange;
             GameManager.Instance.ChangeState(GameState.Fighting);
         }
     }

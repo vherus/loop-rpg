@@ -13,6 +13,9 @@ public class SpawnCycle : MonoBehaviour
 
     [SerializeField]
     private float fillTime = 15f;
+
+    [SerializeField]
+    private float inCombatTimeModifier = 5f;
     
     void Start()
     {
@@ -28,6 +31,15 @@ public class SpawnCycle : MonoBehaviour
             return;
         }
 
-        bar.fillAmount += 1f / fillTime * Time.deltaTime;
+        float time;
+        if (GameManager.Instance.State == GameState.Adventuring) {
+            time = fillTime;
+        } else if (GameManager.Instance.State == GameState.Fighting) {
+            time = fillTime * inCombatTimeModifier;
+        } else {
+            return;
+        }
+
+        bar.fillAmount += 1f / time * Time.deltaTime;
     }
 }

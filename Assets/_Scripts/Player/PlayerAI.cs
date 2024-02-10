@@ -38,4 +38,18 @@ public class PlayerAI : MonoBehaviour
             wpIndex = 0;
         }
     }
+
+    public void PauseMovement()
+    {
+        agent.isStopped = true;
+    }
+    
+    public void ResumeMovement()
+    {
+        if (!agent) {
+            agent = GetComponent<NavMeshAgent>();
+        }
+        
+        agent.isStopped = false;
+    }
 }

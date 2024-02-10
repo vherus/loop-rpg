@@ -970,6 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedTile: {fileID: 4124119141105022900, guid: 9430eeacb387db946a4f821985a7f571,
     type: 3}
+  player: {fileID: 1529792874}
 --- !u!4 &510236435
 Transform:
   m_ObjectHideFlags: 0
@@ -1438,7 +1439,7 @@ GameObject:
   - component: {fileID: 1086918268}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
