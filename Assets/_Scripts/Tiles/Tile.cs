@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -30,7 +31,7 @@ public class Tile : MonoBehaviour
 
     private void RemoveDestroyedEnemies()
     {
-        foreach (GameObject enemy in SpawnedEnemies) {
+        foreach (GameObject enemy in SpawnedEnemies.ToList()) {
             if (!enemy || enemy.IsDestroyed()) {
                 SpawnedEnemies.Remove(enemy);
             }

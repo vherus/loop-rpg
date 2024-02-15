@@ -47,7 +47,7 @@ public class PlayerCombat : MonoBehaviour
                 if (target.GetComponent<Enemy>().TakeDamage(2)) {
                     yield return null;
                 } else {
-                    yield return new WaitForSeconds(2.5f);
+                    yield return new WaitForSeconds(0.5f);
                 }
             }
         }

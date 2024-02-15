@@ -340,6 +340,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_7
       objectReference: {fileID: 0}
+    - target: {fileID: 4424436287040685156, guid: cd6aead9a486fec40b95a79edda2b490,
+        type: 3}
+      propertyPath: SpawnPercentChance
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -567,7 +572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31622776, y: -0.00000002998759, z: 0.000000009995862, w: 0.9486833}
+  m_LocalRotation: {x: 0.31622773, y: -0.000000045147722, z: 0.000000015049237, w: 0.9486833}
   m_LocalPosition: {x: -12.391832, y: 13.723084, z: -18.456322}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2190,7 +2195,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563276572}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31622776, y: -0.00000002998759, z: 0.000000009995862, w: 0.9486833}
+  m_LocalRotation: {x: 0.31622773, y: -0.000000045147722, z: 0.000000015049237, w: 0.9486833}
   m_LocalPosition: {x: -12.391832, y: 13.723084, z: -18.456322}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2361,6 +2366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tile_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424436287040685156, guid: cd6aead9a486fec40b95a79edda2b490,
+        type: 3}
+      propertyPath: SpawnPercentChance
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2817,6 +2827,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tile_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424436287040685156, guid: cd6aead9a486fec40b95a79edda2b490,
+        type: 3}
+      propertyPath: SpawnPercentChance
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
