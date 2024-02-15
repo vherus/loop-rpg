@@ -13,12 +13,15 @@ public class Enemy : MonoBehaviour
     public string DisplayName { get { return displayName; } }
     public int Health { get { return health; } }
 
-    public void TakeDamage(int damage)
+    public bool TakeDamage(int damage)
     {
         health -= damage;
 
         if (health < 1) {
             Destroy(gameObject);
+            return true;
         }
+
+        return false;
     }
 }

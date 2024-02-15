@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
@@ -15,6 +16,8 @@ public class Tile : MonoBehaviour
 
     public void Spawn()
     {
+        RemoveDestroyedEnemies();
+        
         if (SpawnedEnemies.Count < 4 && Random.Range(0f, 100.0f) <= SpawnPercentChance) {
             GameObject enemy = Instantiate(PotentialEnemies[Random.Range(0, PotentialEnemies.Count - 1)], transform);
             Transform pos = SpawnPoints[SpawnedEnemies.Count];
@@ -22,6 +25,15 @@ public class Tile : MonoBehaviour
             SpawnedEnemies.Add(enemy);
 
             Debug.Log(gameObject.name + " has spawned a " + enemy.GetComponent<Enemy>().DisplayName + "!");
+        }
+    }
+
+    private void RemoveDestroyedEnemies()
+    {
+        foreach (GameObject enemy in SpawnedEnemies) {
+            if (!enemy || enemy.IsDestroyed()) {
+                SpawnedEnemies.Remove(enemy);
+            }
         }
     }
 
