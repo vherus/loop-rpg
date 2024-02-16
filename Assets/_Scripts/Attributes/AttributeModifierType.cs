@@ -1,9 +1,6 @@
-namespace Nathan.Attributes
+public enum AttributeModifierType
 {
-    public enum AttributeModifierType
-    {
-        Flat = 100,
-        PercentageAdd = 200,
-        PercentageMult = 300
-    }
+    Flat = 100,
+    PercentageAdd = 200,
+    PercentageMult = 300
 }
