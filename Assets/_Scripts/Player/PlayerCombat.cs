@@ -10,6 +10,7 @@ public class PlayerCombat : MonoBehaviour
     private GameObject target;
 
     private bool isFighting = false;
+    private float movementSmoothing = 1f;
 
     public void SetEnemies(List<GameObject> enemyList)
     {
@@ -39,7 +40,7 @@ public class PlayerCombat : MonoBehaviour
 
             // Move to the enemy
             if (Vector3.Distance(transform.position, target.transform.position) > 2f) {
-                transform.position = Vector3.Lerp(transform.position, target.transform.position, 1f * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, target.transform.position, movementSmoothing * Time.deltaTime);
                 yield return null;
             } else {
                 // Attack
