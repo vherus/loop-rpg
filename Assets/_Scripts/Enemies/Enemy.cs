@@ -8,16 +8,16 @@ public class Enemy : MonoBehaviour
     private string displayName;
 
     [SerializeField]
-    private int health;
+    private float health;
 
     public string DisplayName { get { return displayName; } }
-    public int Health { get { return health; } }
+    public float Health { get { return health; } }
 
-    public bool TakeDamage(int damage)
+    public bool TakeDamage(float damage)
     {
         health -= damage;
 
-        if (health < 1) {
+        if (health <= 0f) {
             Destroy(gameObject);
             return true;
         }
