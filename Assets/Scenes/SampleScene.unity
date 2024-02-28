@@ -2140,6 +2140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0897abf3b9258949ab9e13b7db11273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponMinDamage: 3
+  weaponMaxDamage: 8
+  armorPenetrationPercent: 1
 --- !u!114 &1529792879
 MonoBehaviour:
   m_ObjectHideFlags: 0

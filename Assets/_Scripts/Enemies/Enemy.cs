@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public string DisplayName { get { return displayName; } }
     public float Health { get { return health; } }
 
-    public bool TakeDamage(float damage)
+    public bool TakeDamage(int damage)
     {
         health -= damage;
 
@@ -23,5 +23,10 @@ public class Enemy : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void UpdateHealth()
+    {
+        health = 9 * GameManager.Instance.EnemyLevel;
     }
 }

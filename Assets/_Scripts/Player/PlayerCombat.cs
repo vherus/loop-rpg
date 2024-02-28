@@ -14,6 +14,15 @@ public class PlayerCombat : MonoBehaviour
     private float movementSmoothing = 1f;
     private PlayerStats playerStats;
 
+    [SerializeField]
+    private int weaponMinDamage = 0;
+
+    [SerializeField]
+    private int weaponMaxDamage = 0;
+
+    [SerializeField]
+    private int armorPenetrationPercent = 1;
+
     public void SetEnemies(List<GameObject> enemyList)
     {
         if (!playerStats) {
@@ -50,9 +59,11 @@ public class PlayerCombat : MonoBehaviour
                 yield return null;
             } else {
                 // Attack
-                float dmg = GenerateDamage(3, 8);
+                int dmg = GenerateDamage();
                 Debug.Log($"Attacking for {dmg}!");
-                if (target.GetComponent<Enemy>().TakeDamage(dmg)) {
+                Enemy enemy = target.GetComponent<Enemy>();
+                Debug.Log($"Enemy max health: {enemy.Health}");
+                if (enemy.TakeDamage(dmg)) {
                     yield return null;
                 } else {
                     yield return new WaitForSeconds(0.5f);
@@ -61,19 +72,21 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    private float GenerateDamage(int dmgMin, int dmgMax)
+    private int GenerateDamage()
     {
         EnemyStats eStats = target.GetComponent<EnemyStats>();
         System.Random random = new System.Random();
         
-        int weaponDamage = random.Next(dmgMin, dmgMax + 1);
-        float pStr = playerStats.Stats.Strength.Value;
-        float eStr = (pStr - eStats.Stats.Vitality.Value + 20) / 4;
-        float enemyArmor = 10f;
-        float pDef = (enemyArmor + (eStats.Stats.Vitality.Value / 2)) / 100;
-        float bDmg = weaponDamage + eStr;
+        int weaponDamage = random.Next(weaponMinDamage, weaponMaxDamage + 1);
 
-        return bDmg - (bDmg * pDef);
+        float pStr = playerStats.Stats.Strength.Value;
+        double eStr = ((pStr * 2.5) - eStats.Stats.Vitality.Value + 20) / 4;
+        int enemyArmor = GameManager.Instance.EnemyLevel;
+        int eACoefficient = 100;
+        double pDef = (enemyArmor / eACoefficient / ((enemyArmor / eACoefficient) + (0.5 - (eStats.Stats.Vitality.Value / (2 * (eStats.Stats.Vitality.Value + eACoefficient)))))) - (armorPenetrationPercent / 100);
+        double bDmg = weaponDamage + eStr;
+
+        return (int) Math.Floor((1 - pDef) * bDmg);
     }
 
     private GameObject GetClosestEnemy()

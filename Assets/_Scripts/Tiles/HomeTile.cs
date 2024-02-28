@@ -4,6 +4,7 @@ public class HomeTile : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag + " entered the home tile");
+        GameManager.Instance.EnemyLevel++;
+        Debug.Log(other.tag + " entered the home tile. Leveling enemies up.");
     }
 }

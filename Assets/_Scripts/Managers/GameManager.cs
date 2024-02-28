@@ -13,6 +13,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private GameObject player;
 
+    public int EnemyLevel = 1;
+
     void Start() {
         ChangeState(GameState.Starting);
     }

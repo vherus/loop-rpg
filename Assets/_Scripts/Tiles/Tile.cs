@@ -21,6 +21,7 @@ public class Tile : MonoBehaviour
         
         if (SpawnedEnemies.Count < 4 && Random.Range(0f, 100.0f) <= SpawnPercentChance) {
             GameObject enemy = Instantiate(PotentialEnemies[Random.Range(0, PotentialEnemies.Count - 1)], transform);
+            enemy.GetComponent<Enemy>().UpdateHealth();
             Transform pos = SpawnPoints[SpawnedEnemies.Count];
             enemy.transform.position = pos.position;
             SpawnedEnemies.Add(enemy);
